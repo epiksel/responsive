@@ -1,0 +1,54 @@
+/* Tabs */
+.responsive-tabs .nav-tabs {
+  scrollbar-width: none;
+}
+.responsive-tabs .nav-tabs.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tables */
+@media (max-width: 767px) {
+  table.data-responsive-table,
+  .data-responsive-table thead,
+  .data-responsive-table tbody,
+  .data-responsive-table tfoot,
+  .data-responsive-table th,
+  .data-responsive-table td,
+  .data-responsive-table tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .data-responsive-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* Her satır kapalı bir kutu */
+  .data-responsive-table tbody tr,
+  .data-responsive-table tfoot tr {
+    border: 1px solid #ddd;
+    border-top-width: 2px;
+  }
+
+  .data-responsive-table td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+  }
+  .data-responsive-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .data-responsive-table td:before,
+  .data-responsive-table tbody th:before {
+    content: attr(data-responsive-heading);
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  .data-responsive-table td.title-hidden:before {
+    padding-right: 0;
+  }
+}
